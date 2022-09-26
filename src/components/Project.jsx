@@ -9,7 +9,7 @@ const projectItem = ({ name, stack, image, github, link }) => {
           src={image}
           alt={name}
           className="w-full h-full object-cover"
-          crossOrigin="anonymous"
+          crossOrigin
         />
       </div>
 
