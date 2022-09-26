@@ -164,7 +164,7 @@ const App = () => {
           </div>
         </div>
 
-        <div className="container mx-auto mb-16">
+        <div className="container mx-auto mb-20">
           <h3 className="text-neutral-100 text-center text-3xl uppercase font-bold py-4">
             Skills
           </h3>
@@ -172,7 +172,7 @@ const App = () => {
 
         <div>
           <div className="mx-auto text-neutral-100">
-            <div className="text-center uppercase text-xl flex flex-wrap row space-x-10 justify-center">
+            <div className="text-center uppercase text-xl flex flex-wrap row justify-center">
               <div className="w-28 p-2 flex flex-col items-center hover:scale-95">
                 <svg className="w-12 h-12 fill-orange-600">
                   <use xlinkHref={`${SpriteIcons}#icon-html-five`}></use>
