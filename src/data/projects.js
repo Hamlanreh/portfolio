@@ -19,11 +19,3 @@ const projects = [
 ];
 
 export default projects;
-
-//  {
-//     name: 'Web developer portfolio',
-//     stack: ['react', 'css', 'tailwind', 'javascript'],
-//     img: '',
-//     github: '',
-//     link: 'https://hamlanreh.netlify.app/',
-//   },
