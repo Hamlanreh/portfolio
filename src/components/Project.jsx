@@ -6,9 +6,10 @@ const projectItem = ({ name, stack, image, github, link }) => {
     <article className="project-item bg-neutral-100 overflow-hidden rounded hover:-rotate-2">
       <div className="w-full h-48">
         <img
-          src={require(image)}
+          src={image}
           alt={name}
           className="w-full h-full object-cover"
+          crossOrigin="anonymous"
         />
       </div>
 
