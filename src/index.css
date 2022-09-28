@@ -24,7 +24,6 @@
     background-size: 216%;
   }
 }
-
 */
 
 /* Hamburger Menu */
@@ -79,18 +78,6 @@
   min-height: 150vh;
 }
 
-.contact {
-  background-image: linear-gradient(
-      to top right,
-      rgba(0, 0, 0, 0.8),
-      rgba(0, 0, 0, 0.8)
-    ),
-    url('./assets/img/about-bg.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
 .close-left,
 .close-right {
   background-color: white;
@@ -102,7 +89,6 @@
   top: 0;
   left: 25%;
   transform: rotate(0);
-  /* transition: all 0.5s; */
 }
 .close-left {
   transform: translateY(24px) rotate(-45deg);
