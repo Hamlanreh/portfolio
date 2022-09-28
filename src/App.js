@@ -6,7 +6,7 @@ import SpriteIcons from './assets/img/icons/sprite.svg';
 import datas from './data/projects';
 
 const App = () => {
-  const [showPopup, setShowPopup] = useState(true);
+  const [showPopup, setShowPopup] = useState(false);
 
   return (
     <div className="app relative">
