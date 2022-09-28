@@ -1,5 +1,5 @@
 import React from 'react';
-import SpriteIcons from '../img/icons/sprite.svg';
+import SpriteIcons from '../assets/img/icons/sprite.svg';
 
 const projectItem = ({ name, stack, image, github, link }) => {
   return (

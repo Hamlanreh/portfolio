@@ -1,17 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Project from './components/Project';
-import SpriteIcons from './img/icons/sprite.svg';
-import { ReactComponent as ResponsiveIcon } from './img/icons/responsive.svg';
-import { ReactComponent as FrontendIcon } from './img/icons/frontend.svg';
-import { ReactComponent as BackendIcon } from './img/icons/backend.svg';
-import { ReactComponent as DeploymentIcon } from './img/icons/deployment.svg';
+import SpriteIcons from './assets/img/icons/sprite.svg';
 import datas from './data/projects';
 
 const App = () => {
+  const [showPopup, setShowPopup] = useState(true);
+
   return (
-    <div className="app">
+    <div className="app relative">
       <header id="header" className="relative">
         <nav
           id="nav"
@@ -27,9 +25,6 @@ const App = () => {
               <a href="#about" className="hover:text-cyan-700">
                 About
               </a>
-              <a href="#services" className="hover:text-cyan-700">
-                Services
-              </a>
               <a href="#projects" className="hover:text-cyan-700">
                 Projects
               </a>
@@ -37,7 +32,10 @@ const App = () => {
                 Contact
               </a>
             </div>
-            <button className="block hamburger md:hidden focus:outline-none">
+            <button
+              className="block hamburger md:hidden focus:outline-none"
+              onClick={() => setShowPopup(!showPopup)}
+            >
               <span className="hamburger-top"></span>
               <span className="hamburger-middle"></span>
               <span className="hamburger-bottom"></span>
@@ -115,10 +113,10 @@ const App = () => {
 
       <section
         id="about"
-        className="about relative bg-neutral-300 text-neutral-800 py-40"
+        className="about relative bg-neutral-100 text-neutral-800 py-40"
       >
-        <div className="container mx-auto mb-16">
-          <h2 className="text-neutral-100 text-center text-4xl uppercase font-bold py-4">
+        <div className="container mx-auto mb-12">
+          <h2 className="text-center text-4xl uppercase font-bold p-4">
             About Me
           </h2>
         </div>
@@ -128,7 +126,7 @@ const App = () => {
             <div className="md:ml-2 md:mr-6">
               <div className="relative bg-gray-200 w-52 h-52 overflow-hidden rounded-full mx-auto hover:scale-95">
                 <img
-                  src={require('./img/about-me.jpg')}
+                  src={require('./assets/img/about-me.jpg')}
                   alt=""
                   className="w-full h-full object-cover z-0"
                 />
@@ -136,13 +134,13 @@ const App = () => {
             </div>
 
             <div className="text-center mt-16 md:text-left md:mt-0">
-              <h3 className="text-3xl font-bold uppercase py-2 mb-6 md:text-4xl">
+              <h3 className="text-2xl font-bold uppercase py-2 mb-6 md:text-4xl">
                 Hi, I'm Oluwabi Ahmed
               </h3>
-              <p className="text-2xl font-bold capitalize mb-4">
-                Web developer
+              <p className="text-lg font-bold capitalize mb-4 md:text-2xl">
+                Web Developer
               </p>
-              <p className="text-lg font-semibold py-2">
+              <p className="text-base font-semibold py-2 md:text-lg">
                 I'm a web developer who is able to realise projects from the
                 ground up. I am well versed in all the key languages and am able
                 to design, code, debug and deploy in an organised and efficient
@@ -154,7 +152,7 @@ const App = () => {
                 serve me and my employer in the future.
               </p>
               <a
-                href="./img/Resume-Oluwabi-Ahmed-CV.pdf"
+                href="./assets/Resume-Oluwabi-Ahmed-CV.pdf"
                 download="Resume-Oluwabi-Ahmed-CV.pdf"
                 className="inline-block text-base text-center font-semibold uppercase py-2 mt-8 w-64 border-2 border-neutral-800 rounded-sm hover:bg-neutral-800 hover:text-neutral-100 hover:scale-95 active:translate-y-1"
               >
@@ -164,14 +162,14 @@ const App = () => {
           </div>
         </div>
 
-        <div className="container mx-auto mb-20">
-          <h3 className="text-neutral-100 text-center text-3xl uppercase font-bold py-4">
+        <div className="container mx-auto mb-16">
+          <h3 className="text-center text-3xl uppercase font-bold py-4">
             Skills
           </h3>
         </div>
 
         <div>
-          <div className="mx-auto text-neutral-100">
+          <div className="mx-auto">
             <div className="text-center uppercase text-xl flex flex-wrap row justify-center">
               <div className="w-28 p-2 flex flex-col items-center hover:scale-95">
                 <svg className="w-12 h-12 fill-orange-600">
@@ -216,82 +214,6 @@ const App = () => {
                 <span className="block mt-8">python</span>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="services" className="services bg-neutral-900">
-        <div className="container mx-auto py-80">
-          <div className="py-2 mb-4">
-            <h2 className="font-bold text-4xl text-center uppercase text-white mb-10 py-2 md:text-left">
-              Services
-            </h2>
-          </div>
-
-          <div className="service-list text-white mb-4">
-            <article className="bg-slate-700 p-4 flex flex-col items-start rounded md:flex-row hover:scale-95">
-              <div className="w-full flex items-start justify-center mr-0 md:justify-start md:mr-5 md:w-fit">
-                <ResponsiveIcon className="w-28 h-28 fill-white md:w-24 md:h-24" />
-              </div>
-              <div className="w-full md:w-3/4">
-                <h2 className="mb-1 font-semibold text-base uppercase text-center md:text-left">
-                  Responsive Interface
-                </h2>
-                <p className="text-base">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-                  deserunt ea, tempore omnis provident incidunt alias a eos
-                  delectus sunt accusamus aliquid odio eveniet maxime.
-                </p>
-              </div>
-            </article>
-
-            <article className="bg-slate-700 p-4 flex flex-col items-start rounded md:flex-row hover:scale-95">
-              <div className="w-full flex items-start justify-center mr-0 md:justify-start md:mr-5 md:w-fit">
-                <FrontendIcon className="w-28 h-28 fill-white md:w-24 md:h-24" />
-              </div>
-              <div className="w-full md:w-3/4">
-                <h2 className="mb-1 font-semibold text-base uppercase text-center md:text-left">
-                  Front-end Design
-                </h2>
-                <p className="text-base">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-                  deserunt ea, tempore omnis provident incidunt alias a eos
-                  delectus sunt accusamus aliquid odio eveniet maxime.
-                </p>
-              </div>
-            </article>
-
-            <article className="bg-slate-700 p-4 flex flex-col items-start rounded md:flex-row hover:scale-95">
-              <div className="w-full flex items-start justify-center mr-0 md:justify-start md:mr-5 md:w-fit">
-                <BackendIcon className="w-28 h-28 fill-white md:w-24 md:h-24" />
-              </div>
-              <div className="w-full md:w-3/4">
-                <h2 className="mb-1 font-semibold text-base uppercase text-center md:text-left">
-                  Back-end Development
-                </h2>
-                <p className="text-base">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-                  deserunt ea, tempore omnis provident incidunt alias a eos
-                  delectus sunt accusamus aliquid odio eveniet maxime.
-                </p>
-              </div>
-            </article>
-
-            <article className="bg-slate-700 p-4 flex flex-col items-start rounded md:flex-row hover:scale-95">
-              <div className="w-full flex items-start justify-center mr-0 md:justify-start md:mr-5 md:w-fit">
-                <DeploymentIcon className="w-28 h-28 fill-white md:w-24 md:h-24" />
-              </div>
-              <div className="w-full md:w-3/4">
-                <h2 className="mb-1 font-semibold text-base uppercase text-center md:text-left">
-                  Deployment
-                </h2>
-                <p className="text-base">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-                  deserunt ea, tempore omnis provident incidunt alias a eos
-                  delectus sunt accusamus aliquid odio eveniet maxime.
-                </p>
-              </div>
-            </article>
           </div>
         </div>
       </section>
@@ -408,14 +330,54 @@ const App = () => {
       </section>
 
       <footer id="footer" className="bg-neutral-800 text-white">
-        <div className="container mx-auto py-8 text-center md:text-start">
-          <p className="p-4 md:p-0">
+        <div className="container mx-auto py-8 md:text-start">
+          <p className="text-center p-4 md:p-0">
             Oluwabi Ahmed Portfolio - Copyright &copy; 2022. All right reserved
             and this website should only be used for learning and non-commercial
             purposes.
           </p>
         </div>
       </footer>
+
+      {showPopup && (
+        <aside className="fixed z-50 bg-white top-0 left-0 right-0 bottom-0">
+          <button
+            onClick={() => setShowPopup(!showPopup)}
+            className="absolute z-60 block bg-neutral-800 p-6 top-7 left-7 rounded-full"
+          >
+            <span className="close-left"></span>
+            <span className="close-right"></span>
+          </button>
+
+          <div className="container mx-auto">
+            <div className="flex justify-center items-center p-6">
+              <a href="#header" className="text-2xl font-semibold uppercase">
+                Hamlanreh
+              </a>
+            </div>
+
+            <div className="text-2xl h-screen">
+              <div
+                className="flex flex-col space-y-10 items-center uppercase mt-24"
+                onClick={() => setShowPopup(!showPopup)}
+              >
+                <a href="#header" className="">
+                  Home
+                </a>
+                <a href="#about" className="">
+                  About
+                </a>
+                <a href="#projects" className="">
+                  Projects
+                </a>
+                <a href="#contact" className="">
+                  Contact
+                </a>
+              </div>
+            </div>
+          </div>
+        </aside>
+      )}
     </div>
   );
 };
